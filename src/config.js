@@ -5,10 +5,13 @@
 // Where inquiries from the contact form are delivered, and the address shown on the site.
 export const CONTACT_EMAIL = "selaireandco@gmail.com";
 
-// Google Calendar appointment booking page.
-// In Google Calendar: Create > Appointment schedule > (set it up) > Share > copy the booking page link,
-// e.g. "https://calendar.app.google/abc123". Until this is filled in, "Book a Call" buttons send
-// visitors to the contact form instead.
+// Google Calendar appointment booking page, embedded in the Book a Call section.
+// In Google Calendar: open the appointment schedule > Share > Website embed > Inline website embed,
+// then copy only the src="..." address from the code, e.g.
+// "https://calendar.google.com/calendar/appointments/schedules/AcZssZ...?gv=true".
+// A "calendar.app.google/..." share link also works, but opens in a new tab instead of embedding.
+// Until this is filled in, "Book a Call" buttons send visitors to the contact form instead.
+// This address is public (anyone with it can see open slots); it is not a secret.
 export const BOOKING_URL = "";
 
 // The contact form posts to FormSubmit (https://formsubmit.co), a free form-to-email relay, so the

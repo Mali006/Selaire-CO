@@ -50,13 +50,13 @@ export default function InquiryForm({ idPrefix = "inquiry" }) {
     <form onSubmit={onSubmit}>
       <div className="space-y-3">
         <label htmlFor={id("name")} className="sr-only">Full name</label>
-        <input id={id("name")} name="name" required autoComplete="name" className={field} placeholder="Full name" />
+        <input id={id("name")} name="name" required maxLength={100} autoComplete="name" className={field} placeholder="Full name" />
 
         <label htmlFor={id("email")} className="sr-only">Email address</label>
-        <input id={id("email")} name="email" type="email" required autoComplete="email" className={field} placeholder="Email address" />
+        <input id={id("email")} name="email" type="email" required maxLength={254} autoComplete="email" className={field} placeholder="Email address" />
 
         <label htmlFor={id("brokerage")} className="sr-only">Brokerage</label>
-        <input id={id("brokerage")} name="brokerage" autoComplete="organization" className={field} placeholder="Brokerage" />
+        <input id={id("brokerage")} name="brokerage" maxLength={120} autoComplete="organization" className={field} placeholder="Brokerage" />
 
         <label htmlFor={id("volume")} className="sr-only">Transactions per month</label>
         <select id={id("volume")} name="transactions_per_month" className={field} defaultValue="">
@@ -70,7 +70,7 @@ export default function InquiryForm({ idPrefix = "inquiry" }) {
         </select>
 
         <label htmlFor={id("message")} className="sr-only">Message</label>
-        <textarea id={id("message")} name="message" required rows={4} className={field} placeholder="How can I support you?" />
+        <textarea id={id("message")} name="message" required minLength={10} maxLength={3000} rows={4} className={field} placeholder="How can I support you?" />
 
         {/* Honeypot: hidden from people, filled in by spam bots, which FormSubmit then discards */}
         <input type="text" name="_honey" tabIndex={-1} autoComplete="off" className="hidden" aria-hidden="true" />

@@ -29,7 +29,7 @@ src/
 
 ## Common updates
 
-- **Booking link.** Create an appointment schedule in Google Calendar, copy its booking page link and paste it into `BOOKING_URL` in `src/config.js`. Until it's set, the "Book a Call" buttons scroll to the contact form instead.
+- **Booking calendar.** In Google Calendar, open your appointment schedule and choose Share > Website embed > Inline website embed. Copy only the `src="…"` address from the code (it starts with `https://calendar.google.com/calendar/appointments/schedules/`) and paste it into `BOOKING_URL` in `src/config.js`. The calendar then appears in the Book a Call section, and Google handles availability, confirmations and reminders. Until it's set, the "Book a Call" buttons scroll to the contact form instead.
 - **Contact form.** Inquiries are delivered to `CONTACT_EMAIL` through [FormSubmit](https://formsubmit.co). The first submission sends a one-time activation email to that inbox. Click the link in it to start receiving messages.
 - **Reviews.** Add real reviews to `REVIEWS` in `src/content.js`. The Reviews section and its nav link stay hidden while the list is empty.
 - **Copy and FAQs.** Edit the text in `src/content.js`.

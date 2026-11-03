@@ -39,7 +39,7 @@ export default function Hero({ onCta, onNav }) {
             <Button onClick={onCta}>
               Work With Me <ArrowRight size={14} />
             </Button>
-            <BookCallButton variant="outline" className="bg-cream/70 px-6 py-3" onFallback={() => onNav("contact")} />
+            <BookCallButton variant="outline" className="bg-cream/70 px-6 py-3" onNav={onNav} />
           </div>
           <button
             type="button"

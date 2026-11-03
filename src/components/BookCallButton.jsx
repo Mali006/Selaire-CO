@@ -1,11 +1,14 @@
 import { CalendarDays } from "lucide-react";
-import { BOOKING_URL } from "../config.js";
+import { BOOKING_EMBED_SRC, BOOKING_LINK } from "../booking.js";
 import { Button } from "./ui.jsx";
 
-// Opens the Google Calendar booking page in a new tab. Until BOOKING_URL is set,
-// calls onFallback instead (the site uses it to scroll to the contact form).
-export default function BookCallButton({ onFallback, children = "Book a Call", ...props }) {
-  const target = BOOKING_URL ? { href: BOOKING_URL } : { onClick: onFallback };
+// Scrolls to the embedded booking calendar when there is one, otherwise opens the booking link in a
+// new tab. With no booking link configured it scrolls to the contact form.
+export default function BookCallButton({ onNav, children = "Book a Call", ...props }) {
+  let target;
+  if (BOOKING_EMBED_SRC) target = { onClick: () => onNav("booking") };
+  else if (BOOKING_LINK) target = { href: BOOKING_LINK };
+  else target = { onClick: () => onNav("contact") };
   return (
     <Button {...target} {...props}>
       {children} <CalendarDays size={14} strokeWidth={1.5} />
