@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { Check, ChevronDown, Info } from "lucide-react";
+import { Check, ChevronDown, Info, Receipt } from "lucide-react";
 import { Eyebrow, useR } from "../components/ui.jsx";
-import { NOT_INCLUDED, SERVICES } from "../content.js";
+import { NOT_INCLUDED, PAYMENT_NOTE, SERVICES } from "../content.js";
 
 function ServiceCard({ service }) {
   const r = useR();
@@ -69,7 +69,12 @@ export default function Services() {
           ))}
         </div>
 
-        <p className="font-body mx-auto mt-10 flex max-w-2xl items-start justify-center gap-2 text-center text-[12px] leading-6 text-caramel">
+        <p className="font-body mx-auto mt-10 flex max-w-2xl items-center justify-center gap-3 border border-sand bg-cream px-5 py-4 text-center text-[13px] leading-6 text-espresso">
+          <Receipt size={18} strokeWidth={1.5} className="shrink-0 text-caramel" />
+          {PAYMENT_NOTE}
+        </p>
+
+        <p className="font-body mx-auto mt-6 flex max-w-2xl items-start justify-center gap-2 text-center text-[12px] leading-6 text-caramel">
           <Info size={14} strokeWidth={1.5} className="mt-1 shrink-0" />
           {NOT_INCLUDED}
         </p>

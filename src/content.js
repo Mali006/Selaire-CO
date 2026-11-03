@@ -91,6 +91,9 @@ export const SERVICES = [
   },
 ];
 
+export const PAYMENT_NOTE =
+  "No upfront payment. You're invoiced at closing, and the fee can usually be paid through the settlement statement.";
+
 export const NOT_INCLUDED =
   "Selaire & Co. does not provide legal advice, negotiate on your behalf, or perform duties that require a real estate license.";
 
@@ -131,7 +134,7 @@ export const STEPS = [
     n: "04",
     title: "Closing",
     body:
-      "Settlement is confirmed, the file is compiled for broker compliance, and everything is archived neatly for your records.",
+      "Settlement is confirmed, your invoice is sent and the fee is settled, and the file is compiled for broker compliance and archived neatly for your records.",
   },
 ];
 
@@ -144,6 +147,7 @@ export const FULL_PROCESS = [
   "Title, survey & settlement scheduling",
   "Final walkthrough coordination",
   "Broker compliance file & digital archive",
+  "Invoice sent at closing",
 ];
 
 // Real client reviews only. The Reviews section and its nav link stay hidden while this is empty.
@@ -182,5 +186,9 @@ export const FAQS = [
   {
     q: "How much do your services cost?",
     a: "Pricing depends on the service and your monthly volume. Book a call or send an inquiry and you'll receive pricing that fits your business.",
+  },
+  {
+    q: "When do I pay?",
+    a: "Nothing is due upfront. You're invoiced at closing, and with your approval the fee can be paid through the settlement statement so it comes out of closing funds. If you'd rather pay directly, the invoice includes an online payment link.",
   },
 ];
