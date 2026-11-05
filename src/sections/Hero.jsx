@@ -27,13 +27,13 @@ export default function Hero({ onCta, onNav }) {
         <div className="max-w-xl">
           <Logo size="lg" />
           <div className="my-8 h-px w-16 bg-caramel" />
-          <Eyebrow>Real Estate Transaction Coordination</Eyebrow>
+          <Eyebrow>Residential Transaction Coordination</Eyebrow>
           <h1 className={r("font-display mt-5 text-[38px] leading-[1.08] text-espresso", "md:text-6xl lg:text-[64px]")}>
             Organized Support for a Smoother Closing.
           </h1>
           <p className={r("font-body mt-6 max-w-md text-[14px] leading-7 text-cocoa", "md:text-[15px]")}>
-            Reliable remote residential transaction coordination for busy real estate agents in the DMV.
-            Clear processes, consistent communication, and peace of mind from contract to close.
+            Selaire &amp; Co. provides thoughtful, dependable administrative support that helps residential real
+            estate professionals in the DMV stay organized from ratified contract through closing.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button onClick={onCta}>

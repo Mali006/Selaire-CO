@@ -1,6 +1,6 @@
 import { ArrowRight } from "lucide-react";
-import { Button, Eyebrow, Photo, useR } from "../components/ui.jsx";
-import { IMAGES, PILLARS } from "../content.js";
+import { Button, Eyebrow, OliveBranch, Photo, useR } from "../components/ui.jsx";
+import { ABOUT_INTRO, FOUNDER_STORY, IMAGES, SELAIRE_STORY } from "../content.js";
 
 export default function About({ onCta }) {
   const r = useR();
@@ -24,21 +24,9 @@ export default function About({ onCta }) {
             </h2>
             <div className="my-6 h-px w-14 bg-caramel" />
             <div className="font-body max-w-md space-y-4 text-[14px] leading-7 text-cocoa">
-              <p>
-                Selaire &amp; Co. is a remote transaction coordination business serving residential real estate agents
-                across DC, Maryland and Virginia. Once your contract is signed, I step in to manage the paperwork,
-                deadlines and communication that carry a file from contract to close.
-              </p>
-              <p>
-                You take care of your clients. I'll take care of the details, with organized timelines, clear
-                updates and a steady hand on every file, so you can focus on building relationships and growing your
-                business.
-              </p>
-              <p>
-                This work is guided by Colossians 3:23: whatever you do, work at it with all your heart. That means
-                treating every file with care, every deadline with respect, and every client like they matter, because
-                they do.
-              </p>
+              {ABOUT_INTRO.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
             </div>
             <Button onClick={onCta} className="mt-8">
               Work With Me <ArrowRight size={14} />
@@ -47,20 +35,30 @@ export default function About({ onCta }) {
         </div>
       </div>
 
-      <div className={r("mx-auto mt-14 grid max-w-7xl grid-cols-2 border-y border-sand/70", "md:mt-20 md:grid-cols-4 md:border md:mx-10 lg:mx-auto")}>
-        {PILLARS.map(({ icon: Icon, label }, i) => (
-          <div
-            key={label}
-            className={`group flex flex-col items-center px-4 py-10 text-center ${
-              i % 2 === 0 ? "border-r border-sand" : ""
-            } ${i < 2 ? r("border-b border-sand", "md:border-b-0") : ""} ${i === 1 ? r("", "md:border-r") : ""}`}
-          >
-            <Icon size={34} strokeWidth={1} className="text-espresso transition-colors duration-300 group-hover:text-caramel" />
-            <p className="font-body mt-5 max-w-[160px] text-[10px] font-medium leading-5 tracking-[0.2em] text-espresso uppercase">
-              {label}
-            </p>
+      <div className={r("mx-auto mt-14 grid max-w-6xl grid-cols-1 gap-12 px-5 pb-16", "md:mt-24 md:grid-cols-12 md:gap-16 md:px-10 md:pb-0")}>
+        <div className={r("bg-linen p-8", "md:sticky md:top-28 md:col-span-5 md:self-start md:p-10")}>
+          <OliveBranch className="h-16 w-11" />
+          <h3 className="font-display mt-5 text-[28px] leading-tight text-espresso">The Heart Behind Selaire</h3>
+          <div className="font-body mt-5 space-y-4 text-[14px] leading-7 text-cocoa">
+            {SELAIRE_STORY.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
           </div>
-        ))}
+        </div>
+
+        <div className={r("", "md:col-span-7")}>
+          <Eyebrow>Meet the Founder</Eyebrow>
+          <h3 className={r("font-display mt-4 text-[28px] leading-tight text-espresso", "md:text-[34px]")}>
+            Hi! I'm Brianna, the founder of Selaire &amp; Co.!
+          </h3>
+          <div className="font-body mt-6 space-y-4 text-[14px] leading-7 text-cocoa">
+            {FOUNDER_STORY.map((p) => (
+              <p key={p}>{p}</p>
+            ))}
+            <p>And that is the heart behind our promise:</p>
+          </div>
+          <p className="font-script mt-4 text-4xl text-caramel">Grace in Every Detail.</p>
+        </div>
       </div>
     </section>
   );
