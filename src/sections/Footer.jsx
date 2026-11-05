@@ -22,8 +22,13 @@ export default function Footer({ sections, onNav }) {
         </nav>
       </div>
       <div className="border-t border-cream/10">
+        <p className="font-body mx-auto max-w-3xl px-5 pt-5 text-center text-[11px] leading-5 text-sand/80">
+          Services are administrative in nature and subject to applicable licensing requirements and supervising
+          brokerage approval. Selaire &amp; Co. does not provide legal advice, contract negotiation, or real estate
+          brokerage representation.
+        </p>
         <p className="font-body mx-auto max-w-7xl px-5 py-5 text-center text-[10px] tracking-[0.25em] text-latte uppercase">
-          © {new Date().getFullYear()} Selaire &amp; Co. · Remote Residential Transaction Coordination · DC · MD · VA
+          © {new Date().getFullYear()} Selaire &amp; Co. · Residential Transaction Coordination · Washington, DC · Maryland · Northern Virginia
         </p>
       </div>
     </footer>

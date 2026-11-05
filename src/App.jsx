@@ -1,10 +1,9 @@
-import { useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Monitor, Smartphone } from "lucide-react";
 import InquiryModal from "./components/InquiryModal.jsx";
 import { Eyebrow, ViewCtx } from "./components/ui.jsx";
 import { REVIEWS, SECTIONS } from "./content.js";
 import About from "./sections/About.jsx";
-import Benefits from "./sections/Benefits.jsx";
 import Booking from "./sections/Booking.jsx";
 import Contact from "./sections/Contact.jsx";
 import Faq from "./sections/Faq.jsx";
@@ -14,6 +13,7 @@ import Navbar from "./sections/Navbar.jsx";
 import Process from "./sections/Process.jsx";
 import Reviews from "./sections/Reviews.jsx";
 import Services from "./sections/Services.jsx";
+import Values from "./sections/Values.jsx";
 
 /* ------------------------------------------------------------------ */
 /*  Selaire & Co. — React + Tailwind CSS + lucide-react                */
@@ -23,12 +23,23 @@ import Services from "./sections/Services.jsx";
 const NAV_SECTIONS = SECTIONS.filter((s) => s.id !== "reviews" || REVIEWS.length > 0);
 
 function Site({ onCta, rootRef }) {
+  const { forcedMobile } = useContext(ViewCtx);
   const [active, setActive] = useState("home");
 
+  // Keep the nav underline on whichever section is in the middle of the screen
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => entries.forEach((e) => e.isIntersecting && setActive(e.target.id)),
+      { root: forcedMobile ? rootRef.current : null, rootMargin: "-45% 0px -50% 0px" }
+    );
+    rootRef.current?.querySelectorAll("section[id]").forEach((el) => observer.observe(el));
+    return () => observer.disconnect();
+  }, [forcedMobile, rootRef]);
+
   const onNav = (id) => {
-    setActive(id);
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     const el = rootRef.current?.querySelector(`#${id}`);
-    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+    el?.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "start" });
   };
 
   return (
@@ -39,8 +50,8 @@ function Site({ onCta, rootRef }) {
         <Services />
         <Booking onNav={onNav} />
         <About onCta={onCta} />
-        <Benefits />
-        <Process />
+        <Values />
+        <Process onCta={onCta} onNav={onNav} />
         <Reviews reviews={REVIEWS} />
         <Faq />
         <Contact />

@@ -1,6 +1,6 @@
 # Selaire & Co.
 
-Marketing site for Selaire & Co., remote residential transaction coordination for real estate agents in DC, Maryland and Virginia.
+Marketing site for Selaire & Co., administrative transaction coordination for residential real estate professionals in Washington, DC, Maryland and Northern Virginia.
 
 Built with React, Vite, Tailwind CSS v4 and lucide-react.
 

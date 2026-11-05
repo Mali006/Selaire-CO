@@ -7,7 +7,7 @@ import { IMAGES } from "../content.js";
 const BOOKING_STEPS = [
   { n: "01", title: "Pick a time", body: "Choose an open slot on my Google Calendar booking page." },
   { n: "02", title: "Get confirmed", body: "A calendar invite with the meeting details lands in your inbox." },
-  { n: "03", title: "Let's talk", body: "We'll walk through your files, your workflow and how I can help." },
+  { n: "03", title: "Let's talk", body: "Meet me, learn about my services, and see whether I'm a good fit." },
 ];
 
 function BookingCalendar() {
@@ -17,7 +17,7 @@ function BookingCalendar() {
       <div className="bg-cream p-2 shadow-[0_30px_60px_-30px_rgba(0,0,0,0.6)]">
         <iframe
           src={BOOKING_EMBED_SRC}
-          title="Book a discovery call with Selaire & Co. on Google Calendar"
+          title="Book an introductory call with Selaire & Co. on Google Calendar"
           loading="lazy"
           className={r("block h-[680px] w-full border-0", "md:h-[720px]")}
         />
@@ -56,8 +56,8 @@ export default function Booking({ onNav }) {
             Let's Find a Time to Talk.
           </h2>
           <p className="font-body mt-5 max-w-md text-[14px] leading-7 text-sand">
-            Schedule a discovery call to talk through your business and see whether Selaire &amp; Co. is the
-            right fit. Booking takes less than a minute.
+            Book a complimentary 15-minute introductory call to meet me, learn about my services, and determine
+            whether Selaire &amp; Co. is a good fit for you.
           </p>
           <ol className="mt-9 space-y-6">
             {BOOKING_STEPS.map((s) => (
