@@ -28,6 +28,11 @@ describe("App", () => {
     }
   });
 
+  it("shows the founder photo with a description", () => {
+    render(<App />);
+    expect(screen.getByRole("img", { name: /brianna, founder of selaire/i })).toBeInTheDocument();
+  });
+
   it("opens the inquiry form from Work With Me and closes it with Escape", async () => {
     const user = userEvent.setup();
     render(<App />);
