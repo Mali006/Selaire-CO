@@ -1,0 +1,67 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test-and-build:
+    name: Test and build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+      - run: npm test
+      - run: npm run build
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist
+          retention-days: 7
+
+  docker:
+    name: Docker image
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: docker/setup-buildx-action@v3
+
+      - uses: docker/build-push-action@v6
+        with:
+          context: .
+          load: true
+          push: false
+          tags: selaire-co:ci
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - name: Smoke test the container
+        run: |
+          docker run -d --name site -p 8080:8080 selaire-co:ci
+          for i in $(seq 1 15); do curl -fsS http://localhost:8080/ > /dev/null && break; sleep 1; done
+          curl -fsS http://localhost:8080/ | grep -q "<title>Selaire &amp; Co."
+          curl -fsSI http://localhost:8080/ | grep -qi "^content-security-policy:"
+          curl -fsS -o /dev/null http://localhost:8080/favicon.svg
+          echo "Container serves the site with security headers."
+
+      - name: Container logs
+        if: always()
+        run: docker logs site || true
