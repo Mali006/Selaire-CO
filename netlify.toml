@@ -1,0 +1,22 @@
+# Netlify build settings. Tests run before every deploy, so a failing test stops the deploy.
+[build]
+  command = "npm test && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Security headers (mirrored in nginx.conf for the Docker image).
+# If the site starts loading something from a new domain, add it to the matching *-src list.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com; connect-src 'self' https://formsubmit.co; frame-src https://calendar.google.com; form-action 'self'; frame-ancestors 'none'; base-uri 'self'; object-src 'none'"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
