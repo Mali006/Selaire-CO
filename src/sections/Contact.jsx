@@ -34,6 +34,7 @@ export default function Contact() {
               Selaire &amp; Co. is preparing to serve residential real estate professionals throughout:
             </p>
             <p className="font-display mt-1 text-[17px] text-espresso">Washington, DC | Maryland | Northern Virginia</p>
+            <p className="font-body mt-2 text-[14px] leading-7 text-cocoa">All services are provided fully remotely.</p>
             <p className="font-body mt-2 text-[12px] leading-6 text-cocoa">
               Service availability is subject to applicable real estate regulations and brokerage requirements.
             </p>

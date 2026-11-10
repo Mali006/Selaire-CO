@@ -1,6 +1,6 @@
 import { Check, Receipt, X } from "lucide-react";
 import { Eyebrow, useR } from "../components/ui.jsx";
-import { NOT_INCLUDED, PAYMENT_NOTE, SERVICE_DISCLOSURE, SERVICE_INTRO, SERVICES, WHO_WE_SERVE } from "../content.js";
+import { NOT_INCLUDED, PAYMENT_NOTE, REMOTE_NOTE, SERVICE_DISCLOSURE, SERVICE_INTRO, SERVICES, WHO_WE_SERVE } from "../content.js";
 
 export default function Services() {
   const r = useR();
@@ -34,6 +34,7 @@ export default function Services() {
           <article className={r("bg-espresso p-7 text-cream", "md:p-8")}>
             <Eyebrow light>Who We Serve</Eyebrow>
             <p className="font-display mt-4 text-[20px] leading-relaxed">{WHO_WE_SERVE}</p>
+            <p className="font-body mt-4 text-[11px] font-medium tracking-[0.2em] text-latte uppercase">{REMOTE_NOTE}</p>
           </article>
         </div>
 

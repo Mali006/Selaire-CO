@@ -28,7 +28,7 @@ export default function Footer({ sections, onNav }) {
           brokerage representation.
         </p>
         <p className="font-body mx-auto max-w-7xl px-5 py-5 text-center text-[10px] tracking-[0.25em] text-latte uppercase">
-          © {new Date().getFullYear()} Selaire &amp; Co. · Residential Transaction Coordination · Washington, DC · Maryland · Northern Virginia
+          © {new Date().getFullYear()} Selaire &amp; Co. · Remote Residential Transaction Coordination · Washington, DC · Maryland · Northern Virginia
         </p>
       </div>
     </footer>
