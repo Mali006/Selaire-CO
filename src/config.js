@@ -12,7 +12,9 @@ export const CONTACT_EMAIL = "selaireandco@gmail.com";
 // A "calendar.app.google/..." share link also works, but opens in a new tab instead of embedding.
 // Until this is filled in, "Book a Call" buttons send visitors to the contact form instead.
 // This address is public (anyone with it can see open slots); it is not a secret.
-export const BOOKING_URL = "";
+// "Complimentary 15-Minute Introductory Call" schedule (short link: https://calendar.app.google/xB3BuR923EZZKGDQ7)
+export const BOOKING_URL =
+  "https://calendar.google.com/calendar/appointments/schedules/AcZssZ1u2ETjFmSIpGyOF4ZyaktLb9DFXO4x6CRNNQ6PVTggSFZRmcqDJM6JQDr3vQRDuQ8DvlAY5Mz8?gv=true";
 
 // The contact form posts to FormSubmit (https://formsubmit.co), a free form-to-email relay, so the
 // site needs no backend. The very first submission triggers a one-time activation email to
