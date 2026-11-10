@@ -32,8 +32,8 @@ export default function Hero({ onCta, onNav }) {
             Organized Support for a Smoother Closing.
           </h1>
           <p className={r("font-body mt-6 max-w-md text-[14px] leading-7 text-cocoa", "md:text-[15px]")}>
-            Selaire &amp; Co. provides thoughtful, dependable administrative support that helps residential real
-            estate professionals in the DMV stay organized from ratified contract through closing.
+            Selaire &amp; Co. provides thoughtful, dependable, fully remote administrative support that helps
+            residential real estate professionals in the DMV stay organized from ratified contract through closing.
           </p>
           <div className="mt-9 flex flex-wrap gap-3">
             <Button onClick={onCta}>

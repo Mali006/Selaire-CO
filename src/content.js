@@ -63,13 +63,15 @@ export const SERVICES = [
 export const WHO_WE_SERVE =
   "Selaire & Co. supports residential real estate agents and brokerages handling buyer-side and seller-side transactions throughout the DMV.";
 
+export const REMOTE_NOTE = "All services are provided fully remotely.";
+
 export const NOT_INCLUDED = ["Legal advice", "Contract negotiation", "Real estate brokerage representation"];
 
 export const SERVICE_DISCLOSURE =
   "Services are administrative in nature and subject to applicable licensing requirements and supervising brokerage approval. All services are provided in accordance with applicable real estate regulations and brokerage requirements.";
 
 export const PAYMENT_NOTE =
-  "No upfront payment. You're invoiced at closing, and the fee can usually be paid through the settlement statement.";
+  "No upfront payment is required. Our standard coordination fee is invoiced at closing. See \"When do I pay?\" in the FAQ for payment options and cancellation terms.";
 
 export const ABOUT_INTRO = [
   "At Selaire & Co., we believe that excellence is found in the details and that meaningful service begins with a heart for others.",
@@ -209,7 +211,7 @@ export const FAQS = [
   },
   {
     q: "When do I pay?",
-    a: "Nothing is due upfront. You're invoiced at closing, and with your approval the fee can be paid through the settlement statement so it comes out of closing funds. If you'd rather pay directly, you can pay the invoice yourself.",
+    a: "No upfront payment is required. Our standard coordination fee is invoiced at closing. Where permitted and approved by the brokerage and settlement company, payment may be arranged through the settlement process. Alternatively, invoices may be paid directly. If a transaction is canceled after services have begun, a cancellation fee will apply to compensate for administrative work completed. All fees, payment arrangements, and cancellation terms will be agreed upon before services begin.",
   },
 ];
 
