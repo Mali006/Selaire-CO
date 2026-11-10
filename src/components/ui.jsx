@@ -104,7 +104,8 @@ export function Eyebrow({ children, className = "", light = false }) {
   );
 }
 
-export function Photo({ src, alt, className = "", eager = false }) {
+// warm: applies the sepia tint that blends stock photos into the palette. Turn it off for real people.
+export function Photo({ src, alt, className = "", eager = false, warm = true }) {
   const [failed, setFailed] = useState(false);
   if (failed) {
     return (
@@ -117,7 +118,7 @@ export function Photo({ src, alt, className = "", eager = false }) {
       alt={alt}
       loading={eager ? "eager" : "lazy"}
       onError={() => setFailed(true)}
-      className={`warm-photo object-cover ${className}`}
+      className={`${warm ? "warm-photo " : ""}object-cover ${className}`}
     />
   );
 }

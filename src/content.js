@@ -1,4 +1,5 @@
 import { Compass, Gem, Heart, ShieldCheck } from "lucide-react";
+import founderPhoto from "./assets/brianna-founder.jpg";
 
 /* ------------------------------------------------------------------ */
 /*  Site copy and data. Edit text here; layout lives in src/sections.  */
@@ -15,6 +16,7 @@ export const IMAGES = {
   reviews: img("1497032628192-86f99bcd76bc", 1200), // dark wood desk flat lay
   faq: img("1456324504439-367cee3b3c32", 1200), // writing in a planner on oak
   contact: img("1587614382346-4ec70e388b28", 1200), // cozy desk: laptop, candle, coffee
+  founder: founderPhoto, // Brianna (cropped, location data removed)
 };
 
 export const SECTIONS = [

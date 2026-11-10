@@ -47,10 +47,20 @@ export default function About({ onCta }) {
         </div>
 
         <div className={r("", "md:col-span-7")}>
-          <Eyebrow>Meet the Founder</Eyebrow>
-          <h3 className={r("font-display mt-4 text-[28px] leading-tight text-espresso", "md:text-[34px]")}>
-            Hi! I'm Brianna, the founder of Selaire &amp; Co.!
-          </h3>
+          <div className={r("flex flex-col gap-6", "md:flex-row md:items-end md:gap-8")}>
+            <Photo
+              src={IMAGES.founder}
+              alt="Brianna, founder of Selaire & Co., smiling outdoors"
+              warm={false}
+              className={r("aspect-[4/5] w-48 shrink-0 shadow-[0_20px_40px_-24px_rgba(47,32,24,0.5)]", "md:w-56")}
+            />
+            <div>
+              <Eyebrow>Meet the Founder</Eyebrow>
+              <h3 className={r("font-display mt-4 text-[28px] leading-tight text-espresso", "md:text-[34px]")}>
+                Hi! I'm Brianna, the founder of Selaire &amp; Co.!
+              </h3>
+            </div>
+          </div>
           <div className="font-body mt-6 space-y-4 text-[14px] leading-7 text-cocoa">
             {FOUNDER_STORY.map((p) => (
               <p key={p}>{p}</p>
